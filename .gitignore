@@ -1,0 +1,16 @@
+# 압축 데이터는 Git에 포함하고 비압축 원본은 로컬에 유지합니다.
+data/*.jsonl
+data/*.part
+
+# Python 실행 환경 및 임시 파일
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# 개인 설정 및 운영체제 파일
+.env
+.env.*
+.DS_Store
+Thumbs.db

@@ -1,0 +1,115 @@
+분석 파일: /Users/shinilran/Desktop/26-2 sw 일반과제/review-forecast/scripts/../data/All_Beauty.jsonl
+
+============================================================
+1. 실제 파일의 데이터 구조
+============================================================
+행·열 크기(shape): (701528, 10)
+열 이름(columns): ['rating', 'title', 'text', 'images', 'asin', 'parent_asin', 'user_id', 'timestamp', 'helpful_vote', 'verified_purchase']
+
+자료형(dtypes):
+ rating                int64
+title                   str
+text                    str
+images               object
+asin                    str
+parent_asin             str
+user_id                 str
+timestamp             int64
+helpful_vote          int64
+verified_purchase      bool
+
+처음 5개 리뷰(head):
+  rating                                     title                                                                                                                                                                                                                                                                                                         text images       asin parent_asin                      user_id     timestamp  helpful_vote  verified_purchase
+      5 Such a lovely scent but not overpowering. This spray is really nice. It smells really good, goes on really fine, and does the trick. I will say it feels like you need a lot of it though to get the texture I want. I have a lot of hair, medium thickness. I am comparing to other brands with yucky chemicals so I'm gonna stick with this. Try it!     [] B00YQ6X8EO  B00YQ6X8EO AGKHLEW2SOWHNMFQIJGBECAF7INQ 1588687728923             0               True
+      4    Works great but smells a little weird.                                                                  This product does what I need it to do, I just wish it was odorless or had a soft coconut smell. Having my head smell like an orange coffee is offputting. (granted, I did know the smell was described but I was hoping it would be light)     [] B081TJ8YS3  B081TJ8YS3 AGKHLEW2SOWHNMFQIJGBECAF7INQ 1588615855070             1               True
+      5                                      Yes!                                                                                                                                                                                                                                                                                    Smells good, feels great!     [] B07PNNCSP9  B097R46CSY AE74DYR3QUGVPZJ3P7RFWBGIX7XQ 1589665266052             2               True
+      1                         Synthetic feeling                                                                                                                                                                                                                                                                                               Felt synthetic     [] B09JS339BZ  B09JS339BZ AFQLNQNQYFWQZPJQZS6V3NZU4QBQ 1643393630220             0               True
+      5                                        A+                                                                                                                                                                                                                                                                                                      Love it     [] B08BZ63GMJ  B08BZ63GMJ AFQLNQNQYFWQZPJQZS6V3NZU4QBQ 1609322563534             0               True
+
+주요 필드 중 누락된 열: 없음
+
+주요 필드의 결측치 수:
+ parent_asin          0
+rating               0
+title                0
+text                 0
+timestamp            0
+verified_purchase    0
+helpful_vote         0
+
+============================================================
+2. 별점의 기초 통계와 분포
+============================================================
+결측 또는 1~5 정수 별점이 아닌 행 수: 0
+
+유효 별점의 기술 통계(describe):
+ count    701528.000000
+mean          3.960245
+std           1.494452
+min           1.000000
+25%           3.000000
+50%           5.000000
+75%           5.000000
+max           5.000000
+표본 분산: 2.2333855754238003
+
+별점별 리뷰 수와 비율:
+       리뷰 수        비율
+별점                  
+1   102080  0.145511
+2    43034  0.061343
+3    56307  0.080263
+4    79381  0.113154
+5   420726  0.599728
+전체 유효 리뷰 중 저평점(1~2점) 비율: 0.20685418115884185
+
+============================================================
+3. 상품별 리뷰 수
+============================================================
+상품 식별자 결측 행 수: 0
+상품 수: 112565
+
+상품별 리뷰 수 기술 통계:
+ count    112565.000000
+mean          6.232204
+std          25.189840
+min           1.000000
+25%           1.000000
+50%           2.000000
+75%           4.000000
+max        1962.000000
+
+리뷰가 많은 상위 10개 상품:
+ parent_asin
+B085BB7B1M    1962
+B0BM4GX6TT    1750
+B07C533XCW    1513
+B09X9BG4FC    1374
+B00R1TAN7I    1372
+B08L5KN7X4    1343
+B019GBG0IE    1328
+B01M1OFZOG    1243
+B0C9CWKY9G    1153
+B0107QYW14    1112
+리뷰 30개 이상인 상품 수: 3692
+
+============================================================
+4. 상품별 작성 시각순 정렬
+============================================================
+시각 변환 실패 또는 결측 행 수: 0
+
+정렬한 데이터의 처음 10행:
+ parent_asin  rating                                                                                  title                                                                                                                                                                                                                                                                                                                                                                                                                      text     timestamp  verified_purchase  helpful_vote              review_datetime_utc
+ 0005946468       5                                                                             Five Stars                                                                                                                                                                                                                                                                                                                                                                                                                     great 1517547241775               True             0 2018-02-02 04:54:01.775000+00:00
+ 0123034892       5                                                                             Five Stars                                                                                                                                                                                                                                                                                                                                                                                                              Good product 1506446751406               True             0 2017-09-26 17:25:51.406000+00:00
+ 0124784577       5                                                                       Product delivers                                                                                                                                                                                                                                                                                                                                                                                                Makes my hair look healthy 1561418999244               True             1 2019-06-24 23:29:59.244000+00:00
+ 0124784577       5                                                           Perfectly and all the above!                                                                                                                                                                                                                                                                                                                            I exercise a lot being older you don't  smell the best put this shampoo make a big difference! 1567301034115               True             0 2019-09-01 01:23:54.115000+00:00
+ 0124784577       3                               Que cumplió con mis expectativas de higiene para el pelo                                                                                                                                                                                                                                                                                                                                                         La manera de entrega poca seguridad de que lleve bien para su uso 1568041169877               True             0 2019-09-09 14:59:29.877000+00:00
+ 0515059560       4                                           Barbara's best work is in her Regency period                                                                                                                                                                                                                      Although this is an earlier work, I have to say that for me, Barbara's best work is in her Regency period. This is a little slow and heavy. If you like her work, definitely add it to your library. 1410919211000               True             1        2014-09-17 02:00:11+00:00
+ 0692508988       5                                                                Delightful and Profound                                                                                                                                         This is a wonderful tool. Visually and tactilely pleasing. Profoundly fun to use. And full of wisdom dished out in easily digestible portions. Working with this deck has helped me increase my capacity to listen to others more deeply and to enjoy that process more and more. 1458854826000               True             0        2016-03-24 21:27:06+00:00
+ 069267599X       5                                                                        Love it love it                                                                                                                                                                                                                                                                                                                 Love it love it!! All illustrations are stunning and inspiring.  I am sure I'm gonna use the deck a lot💖🐱 1477068920000               True             4        2016-10-21 16:55:20+00:00
+ 069267599X       5                                                                             Five Stars                                                                                                                                                                                                                                                                                                                                                                                                          Super adorable!! 1480696977000               True             3        2016-12-02 16:42:57+00:00
+ 069267599X       5 I ordered them and was not disappointed. The cards are well made and beautifully drawn I wandered onto Amazon looking for a set of cards with cats and found this delightful set of 48 inspirational cards. The sample drawings were so intriguing, I ordered them and was not disappointed. The cards are well made and beautifully drawn. The explanation for each spirit cat is on the card which makes it easy to draw a card for inspiration and in the author's words, ignite intuition. Highly recommend. 1487272475000               True             7        2017-02-16 19:14:35+00:00
+
+1주차 확인 완료: 구조, 별점 분포, 상품별 리뷰 수, 시간순 정렬을 확인했습니다.
+다음 단계: 결측·중복 점검 후 상품별 초기 10개 및 후속 20개 리뷰 구성
