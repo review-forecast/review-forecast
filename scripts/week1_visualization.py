@@ -1,4 +1,4 @@
-"""1주차 분포 그래프: 논문용 PNG와 벡터 PDF 저장."""
+# 1주차 결과 시각화
 from pathlib import Path
 import pandas as pd
 import matplotlib
