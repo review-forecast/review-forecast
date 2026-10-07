@@ -121,22 +121,18 @@ review-forecast/
 
 ## 실행 방법
 
-레포 폴더에서 실행합니다.
+레포 폴더에서 실행한다.
 
 ```bash
-conda activate review-forecast
 python scripts/week1_all_beauty_inspection.py
 ```
 
+리뷰 데이터는 `data/All_Beauty.jsonl.gz`에 포함되어 있으며, 압축을 풀지 않고 사용한다.
 
-리뷰 데이터는 `data/All_Beauty.jsonl.gz`로 저장소에 포함합니다. 압축을 풀지 않고 실행할 수 있습니다. 파일명이나 형식이 다르면 1주차 스크립트의 `DATA_PATH`를 수정합니다. 상대 경로는 **스크립트 위치 기준**이며, Parquet와 JSONL을 지원합니다.
-
-- [데이터 출처: Amazon Reviews 2023](https://huggingface.co/datasets/McAuley-Lab/Amazon-Reviews-2023)
-- 사용할 파일: `raw/review_categories/All_Beauty.jsonl`
-- `raw_meta_All_Beauty`는 상품 메타데이터이므로 리뷰 분석용 파일과 구분합니다.
+데이터 출처: [Amazon Reviews 2023](https://huggingface.co/datasets/McAuley-Lab/Amazon-Reviews-2023)
 
 ## 협업 안내
 
-- 코드는 `scripts/`, 활동 기록과 결과는 `reports/`에 저장합니다.
-- 데이터는 압축 JSONL을 공유하며, 비압축 원본과 개인 가상환경은 Git에서 제외합니다.
-- 라이브러리를 추가하면 `environment.yml`과 `requirements.txt`에도 반영합니다.
+- 코드는 `scripts/`, 활동 기록과 결과는 `reports/`에 저장한다.
+- 데이터는 압축 JSONL을 공유하며, 비압축 원본과 개인 가상환경은 Git에서 제외한다.
+- 라이브러리를 추가하면 `environment.yml`과 `requirements.txt`에도 반영한다.
