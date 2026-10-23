@@ -1,0 +1,31 @@
+# 3주차 별점·정형 특성 회귀 모델
+입력 파일: /Users/suyeon/Documents/활동/SW 일반과제/review-forecast/reports/week2_products.csv
+분석 상품 수: 3643
+임시 상품 단위 분할: 학습 2,914개 / 평가 729개
+분할 기준: test_size=0.2, random_state=42
+정식 시간순 평가는 5주차에 수행할 예정입니다.
+
+기준 모델 특성: initial_mean_rating
+확장 모델 특성: initial_mean_rating, initial_rating_std, initial_low_ratio, initial_rating_1_ratio, initial_rating_2_ratio, initial_rating_3_ratio, initial_rating_4_ratio, initial_rating_5_ratio, initial_mean_text_length, initial_mean_title_length, initial_text_present_ratio, initial_verified_ratio
+Ridge 5-fold CV 선택 alpha: 0.0001
+
+평가 결과(예측값을 0~1로 제한):
+           model      mae     rmse       r2  raw_below_zero  raw_above_one
+ baseline_linear 0.097713 0.126414 0.395248               0              0
+structured_ridge 0.096991 0.125782 0.401275               0              0
+
+기준 모델 대비 확장 모델 MAE 변화율: 0.74%
+
+표준화 계수 절대값 상위 특성:
+                  feature  standardized_coefficient  absolute_coefficient
+   initial_rating_1_ratio                  0.037582              0.037582
+      initial_mean_rating                 -0.034717              0.034717
+        initial_low_ratio                  0.034247              0.034247
+   initial_rating_5_ratio                 -0.028069              0.028069
+       initial_rating_std                 -0.019174              0.019174
+   initial_rating_2_ratio                  0.008970              0.008970
+   initial_rating_3_ratio                  0.005097              0.005097
+initial_mean_title_length                 -0.004822              0.004822
+
+상품 분할·타깃 범위·후속 정보 미사용 검사: PASS
+실행 시간: 0.7초
