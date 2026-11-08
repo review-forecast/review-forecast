@@ -353,7 +353,9 @@ def save_figure(split: pd.DataFrame, comparison: pd.DataFrame,
         "axes.linewidth": .7, "xtick.labelsize": 9, "ytick.labelsize": 9,
     })
     navy, light, accent = "#263E56", "#9CAAB7", "#A16B5D"
-    fig, axes = plt.subplots(1, 3, figsize=(12.8, 3.5), gridspec_kw={"width_ratios": [1.05, 1.25, 1]})
+    # 주별 활동 보고서의 가로형 사진 칸에서 글자가 지나치게 작아지지 않도록
+    # 3개 패널을 약 2.8:1 비율로 구성합니다.
+    fig, axes = plt.subplots(1, 3, figsize=(11.2, 4.0), gridspec_kw={"width_ratios": [1.1, 1.25, 1]})
 
     timeline = split.copy()
     timeline["year"] = pd.to_datetime(timeline.initial_end_timestamp_utc, utc=True).dt.year.clip(lower=2013)
