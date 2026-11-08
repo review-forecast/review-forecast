@@ -1,0 +1,94 @@
+# 4주차 텍스트 전처리·TF-IDF·제목·본문 결합 모델
+텍스트 입력: reports/week2_review_windows.csv.gz (window == 'initial'만 사용)
+분석 상품 수: 3,643 / 초기 리뷰 수: 36,430
+3주차와 동일한 상품 분할: 학습 2,914개 / 평가 729개
+3주차 기준 모델 재현 검사: PASS
+
+[TF-IDF 예시] (ngram_range=(1, 2), smooth_idf, L2 정규화)
+      great    not  does not  not work  broke  scent   last    and
+doc1  0.510  0.000     0.000     0.000  0.000  0.335  0.000  0.255
+doc2  0.000  0.226     0.226     0.297  0.297  0.000  0.000  0.226
+doc3  0.249  0.249     0.249     0.000  0.000  0.000  0.328  0.000
+
+[텍스트 전처리]
+HTML 엔티티 해제 → 태그 제거 → 소문자 → n't를 not으로 분리 → URL·숫자 토큰화 → 공백 정리
+불용어 목록 미사용(not/no 보존), 흔한 단어는 max_df=0.9로 제외
+<br> 포함 본문 비율: 9.64%
+정제 전 예시: are too subtle, not reflecting the meaning enough or at all.<br />Also, I wish it allowed the reader to pick a card without seeing the cats 
+정제 후 예시: are too subtle, not reflecting the meaning enough or at all. also, i wish it allowed the reader to pick a card without seeing the cats
+상품별 본문 문서 평균 단어 수: 426.3
+상품별 제목 문서 평균 단어 수: 41.8
+'N Stars' 형식 자동 제목 비율: 13.23%
+모델 D title 어휘 크기(학습 상품에서만 산출): 1,021
+모델 D body 어휘 크기(학습 상품에서만 산출): 4,378
+
+[하이퍼파라미터] 학습 상품 5겹 교차 검증, 평가 데이터는 최종 1회만 사용
+                  model   cv_mae                                                  best_params  fit_seconds
+            A_text_only 0.106616     alpha=2.154, ngram_range=(1, 2), min_df=5, text_weight=-    22.705479
+     B_structured_title 0.099998      alpha=1, ngram_range=(1, 2), min_df=10, text_weight=0.3    11.987071
+      C_structured_body 0.098404 alpha=0.4642, ngram_range=(1, 1), min_df=10, text_weight=0.3    56.188081
+D_structured_title_body 0.099051      alpha=1, ngram_range=(1, 1), min_df=10, text_weight=0.3    80.595307
+
+[평가 결과] 예측값을 0~1로 제한
+                  model     setting      mae     rmse       r2  raw_below_zero  raw_above_one
+        baseline_linear        main 0.097713 0.126414 0.395248               0              0
+       structured_ridge        main 0.096991 0.125782 0.401275               0              0
+            A_text_only        main 0.097295 0.126819 0.391364               1              0
+     B_structured_title        main 0.094928 0.124125 0.416950               0              0
+      C_structured_body        main 0.094803 0.122858 0.428795               0              0
+D_structured_title_body        main 0.093682 0.122639 0.430828               0              0
+  D_without_star_titles sensitivity 0.093648 0.122444 0.432638               0              0
+A_text_only: 기준 모델 대비 MAE 0.43%, 정형 Ridge 대비 -0.31%
+B_structured_title: 기준 모델 대비 MAE 2.85%, 정형 Ridge 대비 2.13%
+C_structured_body: 기준 모델 대비 MAE 2.98%, 정형 Ridge 대비 2.26%
+D_structured_title_body: 기준 모델 대비 MAE 4.12%, 정형 Ridge 대비 3.41%
+
+[대응 부트스트랩 1000회] MAE 감소량(양수 = 개선)과 95% 구간
+       reference                   model  mae_reduction    ci_low  ci_high  share_improved
+ baseline_linear             A_text_only       0.000418 -0.004129 0.004454        0.564000
+ baseline_linear      B_structured_title       0.002785  0.000928 0.004531        1.000000
+ baseline_linear       C_structured_body       0.002910  0.000748 0.005140        0.996000
+ baseline_linear D_structured_title_body       0.004031  0.001875 0.006096        1.000000
+structured_ridge             A_text_only      -0.000304 -0.004710 0.003848        0.430000
+structured_ridge      B_structured_title       0.002063  0.000694 0.003430        1.000000
+structured_ridge       C_structured_body       0.002188  0.000269 0.004127        0.987000
+structured_ridge D_structured_title_body       0.003308  0.001471 0.005165        1.000000
+
+[모델 A 상위 텍스트 특성] 후속 저평점 비율을 높이는 방향
+source      term  coefficient
+ title   not buy     0.265460
+ title       not     0.211005
+ title     cheap     0.201350
+  body  not work     0.166831
+ title     waste     0.164439
+ title  not work     0.152022
+ title    do not     0.151648
+ title      star     0.145825
+ title      work     0.134203
+ title      poor     0.121610
+ title        do     0.120856
+ title  horrible     0.119940
+ title  to apply     0.119026
+ title not worth     0.115950
+  body     waste     0.114938
+
+[모델 A 상위 텍스트 특성] 후속 저평점 비율을 낮추는 방향
+source          term  coefficient
+ title         great    -0.175099
+ title     excellent    -0.126963
+ title          five    -0.120532
+ title    five stars    -0.117974
+ title          best    -0.108259
+ title          love    -0.102780
+ title       amazing    -0.092075
+  body         great    -0.091781
+ title  good quality    -0.091669
+ title       perfect    -0.088031
+ title great quality    -0.085548
+ title    very happy    -0.084732
+  body        highly    -0.083584
+ title         looks    -0.083046
+  body      products    -0.082599
+
+상품 분할·초기 구간 텍스트만 사용·어휘 학습 데이터 한정·예측 범위 검사: PASS
+실행 시간: 178.0초

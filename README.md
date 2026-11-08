@@ -112,11 +112,13 @@ review-forecast/
 │   ├── week1_all_beauty_inspection.py  # 1주차 데이터 확인 및 기초 통계
 │   ├── week2_all_beauty_analysis.py    # 2주차 정제·초기/후속 구간 구성
 │   ├── week3_structured_models.py      # 3주차 별점·정형 특성 회귀 모델
+│   ├── week4_text_models.py            # 4주차 텍스트 전처리·TF-IDF 결합 모델
 │   └── Amazon-Reviews-2023.py         # 가져온 Hugging Face 데이터 로딩 코드
 ├── reports/
 │   ├── week1.md                       # 1주차 활동 및 주요 결과
 │   ├── week2.md                       # 2주차 활동 및 주요 결과
 │   ├── week3.md                       # 3주차 활동 및 모델 비교 결과
+│   ├── week4.md                       # 4주차 활동 및 텍스트 결합 모델 결과
 │   └── week1_output.txt               # 스크립트 실행 결과
 ├── environment.yml                    # Conda 환경 설정
 ├── requirements.txt                   # Python 라이브러리 목록
@@ -131,6 +133,7 @@ review-forecast/
 python scripts/week1_all_beauty_inspection.py
 python scripts/week2_all_beauty_analysis.py
 python scripts/week3_structured_models.py
+python scripts/week4_text_models.py
 ```
 
 리뷰 데이터는 `data/All_Beauty.jsonl.gz`에 포함되어 있으며, 압축을 풀지 않고 사용한다.

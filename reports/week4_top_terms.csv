@@ -1,0 +1,81 @@
+model,direction,rank,source,term,coefficient
+A_text_only,higher_future_low_ratio,1,title,not buy,0.2654602527618408
+A_text_only,higher_future_low_ratio,2,title,not,0.2110050767660141
+A_text_only,higher_future_low_ratio,3,title,cheap,0.20135042071342468
+A_text_only,higher_future_low_ratio,4,body,not work,0.16683132946491241
+A_text_only,higher_future_low_ratio,5,title,waste,0.1644391119480133
+A_text_only,higher_future_low_ratio,6,title,not work,0.15202192962169647
+A_text_only,higher_future_low_ratio,7,title,do not,0.15164780616760254
+A_text_only,higher_future_low_ratio,8,title,star,0.14582502841949463
+A_text_only,higher_future_low_ratio,9,title,work,0.13420256972312927
+A_text_only,higher_future_low_ratio,10,title,poor,0.12160961329936981
+A_text_only,higher_future_low_ratio,11,title,do,0.12085580080747604
+A_text_only,higher_future_low_ratio,12,title,horrible,0.11993959546089172
+A_text_only,higher_future_low_ratio,13,title,to apply,0.11902590095996857
+A_text_only,higher_future_low_ratio,14,title,not worth,0.11595040559768677
+A_text_only,higher_future_low_ratio,15,body,waste,0.11493810266256332
+A_text_only,higher_future_low_ratio,16,body,not buy,0.1114014983177185
+A_text_only,higher_future_low_ratio,17,title,waste of,0.10901382565498352
+A_text_only,higher_future_low_ratio,18,title,one star,0.1079070046544075
+A_text_only,higher_future_low_ratio,19,title,disappointed,0.10510194301605225
+A_text_only,higher_future_low_ratio,20,title,reviews,0.1040118858218193
+A_text_only,lower_future_low_ratio,1,title,great,-0.17509900033473969
+A_text_only,lower_future_low_ratio,2,title,excellent,-0.12696319818496704
+A_text_only,lower_future_low_ratio,3,title,five,-0.12053243070840836
+A_text_only,lower_future_low_ratio,4,title,five stars,-0.11797413975000381
+A_text_only,lower_future_low_ratio,5,title,best,-0.10825899243354797
+A_text_only,lower_future_low_ratio,6,title,love,-0.10277970135211945
+A_text_only,lower_future_low_ratio,7,title,amazing,-0.09207455813884735
+A_text_only,lower_future_low_ratio,8,body,great,-0.09178140014410019
+A_text_only,lower_future_low_ratio,9,title,good quality,-0.09166870266199112
+A_text_only,lower_future_low_ratio,10,title,perfect,-0.08803055435419083
+A_text_only,lower_future_low_ratio,11,title,great quality,-0.08554808795452118
+A_text_only,lower_future_low_ratio,12,title,very happy,-0.0847320705652237
+A_text_only,lower_future_low_ratio,13,body,highly,-0.08358414471149445
+A_text_only,lower_future_low_ratio,14,title,looks,-0.08304638415575027
+A_text_only,lower_future_low_ratio,15,body,products,-0.08259890228509903
+A_text_only,lower_future_low_ratio,16,title,awesome,-0.08199658244848251
+A_text_only,lower_future_low_ratio,17,title,love it,-0.08026053011417389
+A_text_only,lower_future_low_ratio,18,title,stay on,-0.07797136902809143
+A_text_only,lower_future_low_ratio,19,title,cute,-0.07739955186843872
+A_text_only,lower_future_low_ratio,20,title,review,-0.07412013411521912
+D_structured_title_body,higher_future_low_ratio,1,title,cheap,0.061344092104206716
+D_structured_title_body,higher_future_low_ratio,2,title,worked,0.057664890104320916
+D_structured_title_body,higher_future_low_ratio,3,title,work,0.05202827910987712
+D_structured_title_body,higher_future_low_ratio,4,body,blackheads,0.051893865545526545
+D_structured_title_body,higher_future_low_ratio,5,title,drill,0.050890888794922394
+D_structured_title_body,higher_future_low_ratio,6,title,do,0.04662779843246135
+D_structured_title_body,higher_future_low_ratio,7,title,apply,0.046077521098067835
+D_structured_title_body,higher_future_low_ratio,8,title,works,0.04541504616077754
+D_structured_title_body,higher_future_low_ratio,9,body,lashes,0.04495121348939118
+D_structured_title_body,higher_future_low_ratio,10,title,buy,0.04252393843481803
+D_structured_title_body,higher_future_low_ratio,11,title,easy,0.04224073230317419
+D_structured_title_body,higher_future_low_ratio,12,title,off,0.04118682189663468
+D_structured_title_body,higher_future_low_ratio,13,title,purple,0.040806374008407295
+D_structured_title_body,higher_future_low_ratio,14,title,was,0.03866144652195816
+D_structured_title_body,higher_future_low_ratio,15,body,did,0.036900284896295134
+D_structured_title_body,higher_future_low_ratio,16,body,lash,0.03655193407892159
+D_structured_title_body,higher_future_low_ratio,17,body,work,0.03568286290264093
+D_structured_title_body,higher_future_low_ratio,18,body,results,0.03562471188045726
+D_structured_title_body,higher_future_low_ratio,19,body,drill,0.03493548593165956
+D_structured_title_body,higher_future_low_ratio,20,body,thick,0.034766487393832736
+D_structured_title_body,lower_future_low_ratio,1,title,oil,-0.04025990749272006
+D_structured_title_body,lower_future_low_ratio,2,title,deal,-0.03918774450045433
+D_structured_title_body,lower_future_low_ratio,3,title,excellent,-0.038528381663108284
+D_structured_title_body,lower_future_low_ratio,4,body,products,-0.034671463250374616
+D_structured_title_body,lower_future_low_ratio,5,title,an,-0.033871346080865394
+D_structured_title_body,lower_future_low_ratio,6,title,fine,-0.03382394648674532
+D_structured_title_body,lower_future_low_ratio,7,title,around,-0.03275964951587077
+D_structured_title_body,lower_future_low_ratio,8,body,cute,-0.03245880308027325
+D_structured_title_body,lower_future_low_ratio,9,title,box,-0.030674722217109054
+D_structured_title_body,lower_future_low_ratio,10,body,new,-0.03047993171893153
+D_structured_title_body,lower_future_low_ratio,11,title,on,-0.03034835415858645
+D_structured_title_body,lower_future_low_ratio,12,body,oil,-0.02968775686574642
+D_structured_title_body,lower_future_low_ratio,13,body,much,-0.029366108857900114
+D_structured_title_body,lower_future_low_ratio,14,title,brush,-0.02861195858735004
+D_structured_title_body,lower_future_low_ratio,15,title,cute,-0.02846817961605475
+D_structured_title_body,lower_future_low_ratio,16,body,their,-0.028457419604394976
+D_structured_title_body,lower_future_low_ratio,17,title,misleading,-0.02834849998309514
+D_structured_title_body,lower_future_low_ratio,18,title,or,-0.027973976834966635
+D_structured_title_body,lower_future_low_ratio,19,body,as,-0.02787330804757006
+D_structured_title_body,lower_future_low_ratio,20,body,smell,-0.02751079719881312
