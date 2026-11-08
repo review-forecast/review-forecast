@@ -113,6 +113,7 @@ review-forecast/
 │   ├── week2_all_beauty_analysis.py    # 2주차 정제·초기/후속 구간 구성
 │   ├── week3_structured_models.py      # 3주차 별점·정형 특성 회귀 모델
 │   ├── week4_text_models.py            # 4주차 텍스트 전처리·TF-IDF 결합 모델
+│   ├── week5_temporal_evaluation.py    # 5주차 시간순 평가·표현·오차 사례
 │   └── Amazon-Reviews-2023.py         # 가져온 Hugging Face 데이터 로딩 코드
 ├── reports/
 │   ├── week1.md                       # 1주차 활동 및 주요 결과
@@ -134,6 +135,7 @@ python scripts/week1_all_beauty_inspection.py
 python scripts/week2_all_beauty_analysis.py
 python scripts/week3_structured_models.py
 python scripts/week4_text_models.py
+python scripts/week5_temporal_evaluation.py
 ```
 
 리뷰 데이터는 `data/All_Beauty.jsonl.gz`에 포함되어 있으며, 압축을 풀지 않고 사용한다.

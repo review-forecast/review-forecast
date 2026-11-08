@@ -1,0 +1,2 @@
+model,mae,rmse,r2,raw_below_zero,raw_above_one,train_star_title_review_share,test_star_title_review_share
+D_without_star_titles,0.11082060119041238,0.14482899607374378,0.4888097492720118,0,0,0.1805976430976431,0.0019635343618513326

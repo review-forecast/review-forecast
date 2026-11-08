@@ -1,0 +1,81 @@
+model,direction,rank,source,term,coefficient,train_document_share,test_document_share,random_split_rank,appeared_in_random_top20
+A_text_only,higher_future_low_ratio,1,title,not,0.19663335382938385,0.49957912457912457,0.5890603085553997,2.0,True
+A_text_only,higher_future_low_ratio,2,title,star,0.1853966861963272,0.12163299663299663,0.005610098176718092,8.0,True
+A_text_only,higher_future_low_ratio,3,title,not work,0.17307056486606598,0.05092592592592592,0.08976157082748948,6.0,True
+A_text_only,higher_future_low_ratio,4,title,not buy,0.1620795875787735,0.031144781144781145,0.07433380084151472,1.0,True
+A_text_only,higher_future_low_ratio,5,title,one star,0.15411919355392456,0.1148989898989899,0.001402524544179523,18.0,True
+A_text_only,higher_future_low_ratio,6,title,do not,0.14007669687271118,0.12037037037037036,0.17110799438990182,7.0,True
+A_text_only,higher_future_low_ratio,7,body,not work,0.13140282034873962,0.12878787878787878,0.1584852734922861,4.0,True
+A_text_only,higher_future_low_ratio,8,title,work,0.12916409969329834,0.1127946127946128,0.14726507713884993,9.0,True
+A_text_only,higher_future_low_ratio,9,title,do,0.127718985080719,0.1527777777777778,0.2005610098176718,11.0,True
+A_text_only,higher_future_low_ratio,10,title,cheap,0.11559517681598663,0.030723905723905723,0.03506311360448808,3.0,True
+A_text_only,higher_future_low_ratio,11,title,waste,0.11037980020046234,0.046296296296296294,0.0729312762973352,5.0,True
+A_text_only,higher_future_low_ratio,12,title,it works,0.10715335607528687,0.05808080808080808,0.06872370266479663,,False
+A_text_only,higher_future_low_ratio,13,body,waste,0.10185705870389938,0.08838383838383838,0.11640953716690042,15.0,True
+A_text_only,higher_future_low_ratio,14,title,does not,0.09880843758583069,0.09175084175084175,0.13043478260869565,,False
+A_text_only,higher_future_low_ratio,15,title,poor,0.09846490621566772,0.017255892255892257,0.030855539971949508,10.0,True
+A_text_only,higher_future_low_ratio,16,title,disappointed,0.09630180895328522,0.0484006734006734,0.04207573632538569,19.0,True
+A_text_only,higher_future_low_ratio,17,title,waste of,0.09470203518867493,0.018518518518518517,0.037868162692847124,17.0,True
+A_text_only,higher_future_low_ratio,18,title,buy,0.09426651895046234,0.14898989898989898,0.25105189340813466,,False
+A_text_only,higher_future_low_ratio,19,title,was,0.0927327424287796,0.14604377104377103,0.08415147265077139,,False
+A_text_only,higher_future_low_ratio,20,title,stars one,0.0906405821442604,0.0361952861952862,0.0,,False
+A_text_only,lower_future_low_ratio,1,title,great,-0.13912390172481537,0.7146464646464646,0.7237026647966339,1.0,True
+A_text_only,lower_future_low_ratio,2,body,great,-0.1012265756726265,0.8817340067340067,0.8373071528751753,8.0,True
+A_text_only,lower_future_low_ratio,3,title,awesome,-0.09886392205953598,0.13005050505050506,0.12622720897615708,16.0,True
+A_text_only,lower_future_low_ratio,4,title,five,-0.09854354709386826,0.5467171717171717,0.014025245441795231,3.0,True
+A_text_only,lower_future_low_ratio,5,title,five stars,-0.09655787795782089,0.5462962962962963,0.012622720897615708,4.0,True
+A_text_only,lower_future_low_ratio,6,title,perfect,-0.09210872650146484,0.18897306397306396,0.18092566619915848,10.0,True
+A_text_only,lower_future_low_ratio,7,title,thing,-0.0802990272641182,0.021043771043771045,0.015427769985974754,,False
+A_text_only,lower_future_low_ratio,8,title,quick,-0.0758490115404129,0.013888888888888888,0.025245441795231416,,False
+A_text_only,lower_future_low_ratio,9,body,products,-0.07448703050613403,0.2824074074074074,0.2061711079943899,15.0,True
+A_text_only,lower_future_low_ratio,10,title,beautiful,-0.07371388375759125,0.07744107744107744,0.11781206171107994,,False
+A_text_only,lower_future_low_ratio,11,body,highly recommend,-0.07352057099342346,0.17929292929292928,0.19214586255259467,,False
+A_text_only,lower_future_low_ratio,12,body,highly,-0.07295208424329758,0.2255892255892256,0.23281907433380084,13.0,True
+A_text_only,lower_future_low_ratio,13,title,love it,-0.0707734003663063,0.18897306397306396,0.20476858345021037,17.0,True
+A_text_only,lower_future_low_ratio,14,title,again,-0.0700148418545723,0.04250841750841751,0.06451612903225806,,False
+A_text_only,lower_future_low_ratio,15,body,nice,-0.06989356875419617,0.5349326599326599,0.46563814866760167,,False
+A_text_only,lower_future_low_ratio,16,title,review,-0.06945320218801498,0.01978114478114478,0.019635343618513323,20.0,True
+A_text_only,lower_future_low_ratio,17,title,love,-0.0679982528090477,0.45875420875420875,0.4165497896213184,6.0,True
+A_text_only,lower_future_low_ratio,18,title,very happy,-0.0668594241142273,0.023148148148148147,0.005610098176718092,12.0,True
+A_text_only,lower_future_low_ratio,19,title,everything,-0.06639517098665237,0.020622895622895623,0.019635343618513323,,False
+A_text_only,lower_future_low_ratio,20,body,perfect for,-0.0651610866189003,0.15193602693602692,0.15007012622720897,,False
+D_structured_title_body,higher_future_low_ratio,1,title,it works,0.07562116573057516,0.05808080808080808,0.06872370266479663,,False
+D_structured_title_body,higher_future_low_ratio,2,title,work,0.06075502431114357,0.1127946127946128,0.14726507713884993,3.0,True
+D_structured_title_body,higher_future_low_ratio,3,title,to apply,0.05887468359739857,0.015151515151515152,0.016830294530154277,,False
+D_structured_title_body,higher_future_low_ratio,4,title,eyelash,0.057894494585791906,0.007154882154882155,0.009817671809256662,,False
+D_structured_title_body,higher_future_low_ratio,5,title,not work,0.057767653398192786,0.05092592592592592,0.08976157082748948,,False
+D_structured_title_body,higher_future_low_ratio,6,title,buy,0.056447421321885634,0.14898989898989898,0.25105189340813466,10.0,True
+D_structured_title_body,higher_future_low_ratio,7,title,curl,0.05362470918675375,0.006734006734006734,0.0070126227208976155,,False
+D_structured_title_body,higher_future_low_ratio,8,title,easy,0.0514564800782657,0.11826599326599327,0.2300140252454418,11.0,True
+D_structured_title_body,higher_future_low_ratio,9,title,not buy,0.050376697117894345,0.031144781144781145,0.07433380084151472,,False
+D_structured_title_body,higher_future_low_ratio,10,title,do,0.049538413602268086,0.1527777777777778,0.2005610098176718,6.0,True
+D_structured_title_body,higher_future_low_ratio,11,title,apply,0.04854692466244657,0.01936026936026936,0.019635343618513323,7.0,True
+D_structured_title_body,higher_future_low_ratio,12,body,lashes,0.04830368988629039,0.05597643097643098,0.09817671809256662,9.0,True
+D_structured_title_body,higher_future_low_ratio,13,title,after,0.04708259848091335,0.03156565656565657,0.025245441795231416,,False
+D_structured_title_body,higher_future_low_ratio,14,title,stars one,0.04680360488109938,0.0361952861952862,0.0,,False
+D_structured_title_body,higher_future_low_ratio,15,title,do not,0.04588276156349731,0.12037037037037036,0.17110799438990182,,False
+D_structured_title_body,higher_future_low_ratio,16,title,liner,0.04455179289683269,0.005050505050505051,0.011220196353436185,,False
+D_structured_title_body,higher_future_low_ratio,17,body,not work,0.042574771296641147,0.12878787878787878,0.1584852734922861,,False
+D_structured_title_body,higher_future_low_ratio,18,title,numtoken,0.042141737104852015,0.15824915824915825,0.1640953716690042,,False
+D_structured_title_body,higher_future_low_ratio,19,title,off,0.042015207013557015,0.03156565656565657,0.03927068723702665,12.0,True
+D_structured_title_body,higher_future_low_ratio,20,body,brows,0.0418914757413531,0.021464646464646464,0.012622720897615708,,False
+D_structured_title_body,lower_future_low_ratio,1,title,thing,-0.05029958111263312,0.021043771043771045,0.015427769985974754,,False
+D_structured_title_body,lower_future_low_ratio,2,title,oil,-0.04829350922304005,0.03409090909090909,0.008415147265077139,1.0,True
+D_structured_title_body,lower_future_low_ratio,3,title,quick,-0.041518024912822304,0.013888888888888888,0.025245441795231416,,False
+D_structured_title_body,lower_future_low_ratio,4,title,not good,-0.03924012331352065,0.020622895622895623,0.028050490883590462,,False
+D_structured_title_body,lower_future_low_ratio,5,title,or,-0.03692756228312875,0.050505050505050504,0.05750350631136045,18.0,True
+D_structured_title_body,lower_future_low_ratio,6,body,products,-0.036110434729806976,0.2824074074074074,0.2061711079943899,4.0,True
+D_structured_title_body,lower_future_low_ratio,7,title,wrong,-0.03442302557896101,0.008838383838383838,0.015427769985974754,,False
+D_structured_title_body,lower_future_low_ratio,8,title,box,-0.03417163067232764,0.013888888888888888,0.015427769985974754,9.0,True
+D_structured_title_body,lower_future_low_ratio,9,body,smell,-0.033617110572302523,0.21801346801346802,0.20476858345021037,20.0,True
+D_structured_title_body,lower_future_low_ratio,10,title,again,-0.03355885896269233,0.04250841750841751,0.06451612903225806,,False
+D_structured_title_body,lower_future_low_ratio,11,title,the size,-0.0334036641427705,0.006313131313131313,0.004207573632538569,,False
+D_structured_title_body,lower_future_low_ratio,12,title,cute,-0.032012413894557355,0.07575757575757576,0.08555399719495091,15.0,True
+D_structured_title_body,lower_future_low_ratio,13,title,deal,-0.03192996826263174,0.03367003367003367,0.028050490883590462,2.0,True
+D_structured_title_body,lower_future_low_ratio,14,title,this thing,-0.03192283137842614,0.006313131313131313,0.002805049088359046,,False
+D_structured_title_body,lower_future_low_ratio,15,title,pain,-0.03186192521827199,0.005892255892255892,0.0070126227208976155,,False
+D_structured_title_body,lower_future_low_ratio,16,title,unit,-0.031848306868998755,0.005050505050505051,0.0070126227208976155,,False
+D_structured_title_body,lower_future_low_ratio,17,title,more,-0.031364223794723506,0.0664983164983165,0.0546984572230014,,False
+D_structured_title_body,lower_future_low_ratio,18,body,and is,-0.0309453315260151,0.12836700336700338,0.12342215988779803,,False
+D_structured_title_body,lower_future_low_ratio,19,body,cute,-0.03091753475208384,0.15067340067340068,0.18513323983169705,8.0,True
+D_structured_title_body,lower_future_low_ratio,20,title,an,-0.03087573057305394,0.04755892255892256,0.025245441795231416,5.0,True

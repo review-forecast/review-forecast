@@ -1,0 +1,104 @@
+# 5주차 상품 단위 시간순 평가·모델 비교·표현·오차 사례
+시간 절단일: 2020-07-01T00:00:00+00:00
+학습 2,376개: followup_end < 절단일
+평가 713개: initial_end >= 절단일
+임벌고 554개: 절단일 전 초기 관측은 존재하나 타깃이 아직 완성되지 않음
+가장 늦은 학습 타깃 시각: 2020-06-29T15:55:36.085000+00:00
+가장 빠른 평가 예측 시각: 2020-07-03T07:14:24.080000+00:00
+상품 중복·시간 누수 방지 검사: PASS
+
+[시간순 교차 검증 fold]
+ fold   prediction_window_start     prediction_window_end  fit_products  validation_products                latest_fit_target   earliest_validation_prediction
+    1 2017-01-01T00:00:00+00:00 2018-01-01T00:00:00+00:00           797                  397        2016-12-29T20:49:53+00:00        2017-01-02T00:14:49+00:00
+    2 2018-01-01T00:00:00+00:00 2019-01-01T00:00:00+00:00          1163                  348 2017-12-31T21:07:16.808000+00:00 2018-01-02T03:32:19.244000+00:00
+    3 2019-01-01T00:00:00+00:00 2020-01-01T00:00:00+00:00          1551                  378 2018-12-31T18:29:44.454000+00:00 2019-01-02T18:49:27.247000+00:00
+
+[시간순 평가 결과] 예측값을 0~1로 제한
+                  model      mae     rmse       r2  raw_below_zero  raw_above_one                                                  best_params
+        baseline_linear 0.110584 0.147819 0.467485               0              0                                       ordinary least squares
+       structured_ridge 0.109818 0.146165 0.479338               0              0                                                 alpha=0.0001
+            A_text_only 0.127473 0.167702 0.314596               1              0     alpha=2.154, ngram_range=(1, 2), min_df=5, text_weight=-
+     B_structured_title 0.109876 0.144629 0.490217               0              0       alpha=1, ngram_range=(1, 2), min_df=5, text_weight=0.3
+      C_structured_body 0.110491 0.144393 0.491881               0              0 alpha=0.02154, ngram_range=(1, 2), min_df=5, text_weight=0.1
+D_structured_title_body 0.111027 0.144827 0.488827               0              0  alpha=0.4642, ngram_range=(1, 2), min_df=5, text_weight=0.3
+
+[랜덤 홀드아웃과 시간순 홀드아웃 비교]
+evaluation                random  temporal   change
+model
+A_text_only             0.097295  0.127473 0.030178
+B_structured_title      0.094928  0.109876 0.014949
+C_structured_body       0.094803  0.110491 0.015688
+D_structured_title_body 0.093682  0.111027 0.017345
+baseline_linear         0.097713  0.110584 0.012871
+structured_ridge        0.096991  0.109818 0.012828
+
+[대응 부트스트랩 1000회] MAE 감소량(양수=개선)
+       reference                   model  mae_reduction    ci_low   ci_high  share_improved
+ baseline_linear        structured_ridge       0.000766 -0.000732  0.002452        0.853000
+ baseline_linear             A_text_only      -0.016889 -0.023093 -0.010722        0.000000
+ baseline_linear      B_structured_title       0.000708 -0.001535  0.002854        0.771000
+ baseline_linear       C_structured_body       0.000094 -0.002772  0.003233        0.571000
+ baseline_linear D_structured_title_body      -0.000443 -0.003478  0.002681        0.436000
+structured_ridge             A_text_only      -0.017655 -0.024072 -0.011631        0.000000
+structured_ridge      B_structured_title      -0.000058 -0.001490  0.001340        0.489000
+structured_ridge       C_structured_body      -0.000672 -0.003146  0.001844        0.327000
+structured_ridge D_structured_title_body      -0.001209 -0.003703  0.001224        0.181000
+
+[텍스트 단독 모델 A: 후속 저평점 비율 증가 방향 표현]
+source     term  coefficient  train_document_share  test_document_share
+ title      not     0.196633              0.499579             0.589060
+ title     star     0.185397              0.121633             0.005610
+ title not work     0.173071              0.050926             0.089762
+ title  not buy     0.162080              0.031145             0.074334
+ title one star     0.154119              0.114899             0.001403
+ title   do not     0.140077              0.120370             0.171108
+  body not work     0.131403              0.128788             0.158485
+ title     work     0.129164              0.112795             0.147265
+ title       do     0.127719              0.152778             0.200561
+ title    cheap     0.115595              0.030724             0.035063
+ title    waste     0.110380              0.046296             0.072931
+ title it works     0.107153              0.058081             0.068724
+  body    waste     0.101857              0.088384             0.116410
+ title does not     0.098808              0.091751             0.130435
+ title     poor     0.098465              0.017256             0.030856
+
+[텍스트 단독 모델 A: 후속 저평점 비율 감소 방향 표현]
+source             term  coefficient  train_document_share  test_document_share
+ title            great    -0.139124              0.714646             0.723703
+  body            great    -0.101227              0.881734             0.837307
+ title          awesome    -0.098864              0.130051             0.126227
+ title             five    -0.098544              0.546717             0.014025
+ title       five stars    -0.096558              0.546296             0.012623
+ title          perfect    -0.092109              0.188973             0.180926
+ title            thing    -0.080299              0.021044             0.015428
+ title            quick    -0.075849              0.013889             0.025245
+  body         products    -0.074487              0.282407             0.206171
+ title        beautiful    -0.073714              0.077441             0.117812
+  body highly recommend    -0.073521              0.179293             0.192146
+  body           highly    -0.072952              0.225589             0.232819
+ title          love it    -0.070773              0.188973             0.204769
+ title            again    -0.070015              0.042508             0.064516
+  body             nice    -0.069894              0.534933             0.465638
+
+A 모델 시간순 상위 표현 중 4주차 랜덤 분할 상위 20과 일치: 67.5%
+
+[N Stars 자동 제목 민감도 점검]
+                model      mae     rmse       r2  raw_below_zero  raw_above_one  train_star_title_review_share  test_star_title_review_share
+D_without_star_titles 0.110821 0.144829 0.488810               0              0                       0.180598                      0.001964
+학습과 평가 시기의 자동 별점 제목 빈도 차이를 확인하되, 제목 제거 후에도 결합 D가 정형 Ridge를 뛰어넘는지는 별도로 판단해야 합니다.
+
+[결합 모델 D 최대 오차 사례]
+      case_type parent_asin  followup_low_ratio  D_structured_title_body_prediction  absolute_error  baseline_linear_prediction  structured_ridge_prediction  initial_mean_rating  initial_rating_std  initial_low_ratio                                                                               matched_higher_risk_terms                                                          matched_lower_risk_terms
+ overprediction  B09B9NYX77            0.350000                            0.696474        0.346474                    0.638120                     0.734894             1.500000            1.080123           0.800000                           title:buy(+0.056); title:easy(+0.051); title:do(+0.050); title:do not(+0.046)                                     title:not good(-0.039); body:products(-0.036)
+ overprediction  B091D4F743            0.250000                            0.586682        0.336682                    0.503834                     0.554631             2.300000            1.888562           0.700000                                          title:easy(+0.051); body:lashes(+0.048); body:not work(+0.043)                                           title:or(-0.037); body:products(-0.036)
+ overprediction  B08MF3W9DZ            0.050000                            0.374332        0.324332                    0.352761                     0.365401             3.200000            1.932184           0.500000                                                                                  title:it works(+0.076)
+ overprediction  B00H78IR6W            0.000000                            0.306663        0.306663                    0.319190                     0.326492             3.400000            1.712698           0.400000
+ overprediction  B0896YL6Y5            0.050000                            0.349491        0.299491                    0.386333                     0.388596             3.000000            1.699673           0.400000                        title:buy(+0.056); title:not buy(+0.050); title:do(+0.050); title:do not(+0.046) title:not good(-0.039); body:smell(-0.034); body:and is(-0.031); title:an(-0.031)
+underprediction  B08QVSSZJT            0.950000                            0.371632        0.578368                    0.352761                     0.362851             3.200000            1.988858           0.400000 title:buy(+0.056); title:not buy(+0.050); title:do(+0.050); title:do not(+0.046); body:not work(+0.043)
+underprediction  B08949HMF1            0.750000                            0.171706        0.578294                    0.084188                     0.085853             4.800000            0.632456           0.000000 title:to apply(+0.059); title:easy(+0.051); title:apply(+0.049); body:lashes(+0.048); title:off(+0.042)
+underprediction  B08TBSF17H            0.800000                            0.243819        0.556181                    0.268832                     0.255226             3.700000            1.636392           0.200000                    title:work(+0.061); body:not work(+0.043); title:numtoken(+0.042); title:off(+0.042)                                             title:thing(-0.050); title:or(-0.037)
+underprediction  B08WR94H41            0.750000                            0.221870        0.528130                    0.268832                     0.250051             3.700000            1.636392           0.200000                                                                  title:do(+0.050); title:do not(+0.046)                                                                title:cute(-0.032)
+underprediction  B08N1LVXCD            0.950000                            0.461153        0.488847                    0.470262                     0.498084             2.500000            1.840894           0.600000   title:buy(+0.056); title:not buy(+0.050); title:do(+0.050); title:after(+0.047); title:do not(+0.046)                    body:products(-0.036); body:smell(-0.034); title:again(-0.034)
+
+상품 단위 분리·학습 타깃 선행·초기 텍스트만 사용·학습 데이터 전처리 학습·예측 범위 검사: PASS
+실행 시간: 15.9초

@@ -1,0 +1,7 @@
+model,mae,rmse,r2,raw_below_zero,raw_above_one,best_params
+baseline_linear,0.11058424380504395,0.1478189491719361,0.46748512553421684,0,0,ordinary least squares
+structured_ridge,0.10981824213172221,0.14616461329913372,0.47933785187724753,0,0,alpha=0.0001
+A_text_only,0.1274731762111605,0.16770178224121765,0.3145956156957662,1,0,"alpha=2.154, ngram_range=(1, 2), min_df=5, text_weight=-"
+B_structured_title,0.10987629160612153,0.1446294958718177,0.49021709615877274,0,0,"alpha=1, ngram_range=(1, 2), min_df=5, text_weight=0.3"
+C_structured_body,0.11049068113835142,0.14439321398003996,0.4918814050372051,0,0,"alpha=0.02154, ngram_range=(1, 2), min_df=5, text_weight=0.1"
+D_structured_title_body,0.11102730967331984,0.14482657148372408,0.48882686485575555,0,0,"alpha=0.4642, ngram_range=(1, 2), min_df=5, text_weight=0.3"
