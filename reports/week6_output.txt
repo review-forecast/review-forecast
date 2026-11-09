@@ -1,0 +1,134 @@
+# 6주차 저장 결과 검증 및 종합
+검증 범위: 저장된 예측값, 지표, 상품 분할, 시간 조건, 부트스트랩. 모델 재학습은 수행하지 않음.
+지표 허용 절대 오차: 1e-07
+PASS: 상품 분석표의 식별자 고유성
+PASS: 분할별 상품 중복 없음 및 전체 상품 일치
+PASS: 분할별 상품 중복 없음 및 전체 상품 일치
+PASS: 랜덤 분할 집합 이름
+PASS: 시간순 분할 집합 이름
+PASS: 초기 완료 시각이 후속 완료 시각보다 늦지 않음
+PASS: 저장된 분할 시각과 2주차 상품 데이터 일치
+PASS: 저장된 분할 시각과 2주차 상품 데이터 일치
+PASS: 절단일 기준 학습, 평가, 임벌고 분류 일치
+PASS: 학습 목표값이 평가 예측 시점보다 앞섬
+PASS: 시간순 CV 1 상품 수
+PASS: 시간순 CV 1 학습 목표값 선행
+PASS: 시간순 CV 2 상품 수
+PASS: 시간순 CV 2 학습 목표값 선행
+PASS: 시간순 CV 3 상품 수
+PASS: 시간순 CV 3 학습 목표값 선행
+랜덤 분할: {'train': 2914, 'test': 729}
+시간순 분할: {'train': 2376, 'test': 713, 'embargo': 554}
+PASS: 3주차 평가 상품 일치 및 중복 없음
+PASS: 3주차 목표값 원본 일치
+PASS: 3주차 baseline_linear 예측값 유효 범위
+PASS: 3주차 baseline_linear 상품별 절대 오차
+PASS: 3주차 baseline_linear mae 재계산
+PASS: 3주차 baseline_linear rmse 재계산
+PASS: 3주차 baseline_linear r2 재계산
+PASS: 3주차 structured_ridge 예측값 유효 범위
+PASS: 3주차 structured_ridge 상품별 절대 오차
+PASS: 3주차 structured_ridge mae 재계산
+PASS: 3주차 structured_ridge rmse 재계산
+PASS: 3주차 structured_ridge r2 재계산
+PASS: 4주차 평가 상품 일치 및 중복 없음
+PASS: 4주차 목표값 원본 일치
+PASS: 4주차 baseline_linear 예측값 유효 범위
+PASS: 4주차 baseline_linear 상품별 절대 오차
+PASS: 4주차 baseline_linear mae 재계산
+PASS: 4주차 baseline_linear rmse 재계산
+PASS: 4주차 baseline_linear r2 재계산
+PASS: 4주차 structured_ridge 예측값 유효 범위
+PASS: 4주차 structured_ridge 상품별 절대 오차
+PASS: 4주차 structured_ridge mae 재계산
+PASS: 4주차 structured_ridge rmse 재계산
+PASS: 4주차 structured_ridge r2 재계산
+PASS: 4주차 A_text_only 예측값 유효 범위
+PASS: 4주차 A_text_only 상품별 절대 오차
+PASS: 4주차 A_text_only mae 재계산
+PASS: 4주차 A_text_only rmse 재계산
+PASS: 4주차 A_text_only r2 재계산
+PASS: 4주차 B_structured_title 예측값 유효 범위
+PASS: 4주차 B_structured_title 상품별 절대 오차
+PASS: 4주차 B_structured_title mae 재계산
+PASS: 4주차 B_structured_title rmse 재계산
+PASS: 4주차 B_structured_title r2 재계산
+PASS: 4주차 C_structured_body 예측값 유효 범위
+PASS: 4주차 C_structured_body 상품별 절대 오차
+PASS: 4주차 C_structured_body mae 재계산
+PASS: 4주차 C_structured_body rmse 재계산
+PASS: 4주차 C_structured_body r2 재계산
+PASS: 4주차 D_structured_title_body 예측값 유효 범위
+PASS: 4주차 D_structured_title_body 상품별 절대 오차
+PASS: 4주차 D_structured_title_body mae 재계산
+PASS: 4주차 D_structured_title_body rmse 재계산
+PASS: 4주차 D_structured_title_body r2 재계산
+PASS: 4주차 baseline_linear 대비 A_text_only 부트스트랩 재계산
+PASS: 4주차 baseline_linear 대비 B_structured_title 부트스트랩 재계산
+PASS: 4주차 baseline_linear 대비 C_structured_body 부트스트랩 재계산
+PASS: 4주차 baseline_linear 대비 D_structured_title_body 부트스트랩 재계산
+PASS: 4주차 structured_ridge 대비 A_text_only 부트스트랩 재계산
+PASS: 4주차 structured_ridge 대비 B_structured_title 부트스트랩 재계산
+PASS: 4주차 structured_ridge 대비 C_structured_body 부트스트랩 재계산
+PASS: 4주차 structured_ridge 대비 D_structured_title_body 부트스트랩 재계산
+PASS: 5주차 평가 상품 일치 및 중복 없음
+PASS: 5주차 목표값 원본 일치
+PASS: 5주차 baseline_linear 예측값 유효 범위
+PASS: 5주차 baseline_linear 상품별 절대 오차
+PASS: 5주차 baseline_linear mae 재계산
+PASS: 5주차 baseline_linear rmse 재계산
+PASS: 5주차 baseline_linear r2 재계산
+PASS: 5주차 structured_ridge 예측값 유효 범위
+PASS: 5주차 structured_ridge 상품별 절대 오차
+PASS: 5주차 structured_ridge mae 재계산
+PASS: 5주차 structured_ridge rmse 재계산
+PASS: 5주차 structured_ridge r2 재계산
+PASS: 5주차 A_text_only 예측값 유효 범위
+PASS: 5주차 A_text_only 상품별 절대 오차
+PASS: 5주차 A_text_only mae 재계산
+PASS: 5주차 A_text_only rmse 재계산
+PASS: 5주차 A_text_only r2 재계산
+PASS: 5주차 B_structured_title 예측값 유효 범위
+PASS: 5주차 B_structured_title 상품별 절대 오차
+PASS: 5주차 B_structured_title mae 재계산
+PASS: 5주차 B_structured_title rmse 재계산
+PASS: 5주차 B_structured_title r2 재계산
+PASS: 5주차 C_structured_body 예측값 유효 범위
+PASS: 5주차 C_structured_body 상품별 절대 오차
+PASS: 5주차 C_structured_body mae 재계산
+PASS: 5주차 C_structured_body rmse 재계산
+PASS: 5주차 C_structured_body r2 재계산
+PASS: 5주차 D_structured_title_body 예측값 유효 범위
+PASS: 5주차 D_structured_title_body 상품별 절대 오차
+PASS: 5주차 D_structured_title_body mae 재계산
+PASS: 5주차 D_structured_title_body rmse 재계산
+PASS: 5주차 D_structured_title_body r2 재계산
+PASS: 5주차 baseline_linear 대비 structured_ridge 부트스트랩 재계산
+PASS: 5주차 baseline_linear 대비 A_text_only 부트스트랩 재계산
+PASS: 5주차 baseline_linear 대비 B_structured_title 부트스트랩 재계산
+PASS: 5주차 baseline_linear 대비 C_structured_body 부트스트랩 재계산
+PASS: 5주차 baseline_linear 대비 D_structured_title_body 부트스트랩 재계산
+PASS: 5주차 structured_ridge 대비 A_text_only 부트스트랩 재계산
+PASS: 5주차 structured_ridge 대비 B_structured_title 부트스트랩 재계산
+PASS: 5주차 structured_ridge 대비 C_structured_body 부트스트랩 재계산
+PASS: 5주차 structured_ridge 대비 D_structured_title_body 부트스트랩 재계산
+PASS: 5주차 비교표와 최종 종합표 일치
+
+최종 성능 비교:
+                   model      mae     rmse       r2 evaluation
+        baseline_linear 0.097713 0.126414 0.395248     random
+       structured_ridge 0.096991 0.125782 0.401275     random
+            A_text_only 0.097295 0.126819 0.391364     random
+     B_structured_title 0.094928 0.124125 0.416950     random
+      C_structured_body 0.094803 0.122858 0.428795     random
+D_structured_title_body 0.093682 0.122639 0.430828     random
+        baseline_linear 0.110584 0.147819 0.467485   temporal
+       structured_ridge 0.109818 0.146165 0.479338   temporal
+            A_text_only 0.127473 0.167702 0.314596   temporal
+     B_structured_title 0.109876 0.144629 0.490217   temporal
+      C_structured_body 0.110491 0.144393 0.491881   temporal
+D_structured_title_body 0.111027 0.144827 0.488827   temporal
+
+검증한 성능 지표 수: 42
+최대 지표 차이: 1.6346928255472903e-09
+실행 시간: 0.12초
